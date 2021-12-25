@@ -1,0 +1,208 @@
+.mainRight {
+  width: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 1rem;
+}
+
+.mainTitle {
+  font-size: 2.6rem;
+  font-weight: 600;
+  line-height: 1em;
+  color: var(--veryVarkBlue);
+}
+
+.mainTitleSub {
+  font-size: 1rem;
+  letter-spacing: 0.1em;
+  color: var(--orange);
+}
+
+.mainDiscribtion {
+  max-width: 64.5ch;
+  margin-top: 1rem;
+  line-height: 1.5em;
+  color: var(--darkGrayishBlue);
+}
+
+.mainPrice {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 1rem;
+  color: var(--veryVarkBlue);
+}
+
+.mainPriceOld {
+  margin-top: 0.25em;
+  font-weight: bold;
+  text-decoration: line-through;
+  color: var(--gayishBlue);
+}
+
+.mainDiscount {
+  padding: 0.2rem 0.5rem;
+  font-size: 1rem;
+  background-color: var(--paleOrange);
+  color: var(--orange);
+  border-radius: 0.25rem;
+}
+
+.mainOpts {
+  max-width: 64.5ch;
+  margin-top: 1rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 1rem;
+}
+
+.mainCount {
+  padding: 0 1rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 1rem;
+  background-color: var(--lightGrayishBlue);
+  border-radius: 0.5rem;
+}
+
+.mainCountInput {
+  width: 4ch;
+  font-size: 1.5rem;
+  font-weight: bold;
+  background: none;
+  text-align: center;
+  border: none;
+  outline: none;
+  pointer-events: none;
+}
+
+.mainCountBtn {
+  background: none;
+  border: none;
+  outline: none;
+  -webkit-transition: opacity 0.2s ease, -webkit-transform 0.2s ease;
+  transition: opacity 0.2s ease, -webkit-transform 0.2s ease;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+  transition: opacity 0.2s ease, transform 0.2s ease, -webkit-transform 0.2s ease;
+}
+
+.mainCountBtn img {
+  width: var(--sizeIcon);
+  height: var(--sizeIcon);
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+
+.mainCountBtn:active {
+  opacity: 0.75;
+  -webkit-transform: scale(1.25);
+          transform: scale(1.25);
+}
+
+.mainAddToCart {
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  padding: 1rem;
+  font-size: 1rem;
+  font-weight: bold;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  gap: 1rem;
+  background-color: var(--orange);
+  color: var(--white);
+  border: none;
+  outline: none;
+  border-radius: 0.5rem;
+  -webkit-transition: opacity 0.2s ease;
+  transition: opacity 0.2s ease;
+}
+
+.mainAddToCart img {
+  width: var(--sizeIcon);
+  height: var(--sizeIcon);
+  -webkit-filter: brightness(10);
+          filter: brightness(10);
+}
+
+.mainAddToCart:active {
+  opacity: 0.75;
+}
+
+@media (max-width: 950px) {
+  .mainRight {
+    margin: 0 auto;
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
+  }
+}
+
+@media (max-width: 450px) {
+  .mainRight {
+    padding: 0 var(--gap2);
+    padding-bottom: var(--gap4);
+  }
+  .mainTitle {
+    font-size: 2rem;
+  }
+  .mainTitleSub {
+    font-size: 0.9rem;
+  }
+  .mainDiscribtion {
+    margin-top: 0;
+  }
+  .mainPrice {
+    font-size: 1.5rem;
+  }
+  .mainPriceHold {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+  .mainOpts {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .mainCount {
+    width: 100%;
+    padding: var(--gap1) var(--gap1);
+  }
+  .mainCountInput {
+    -webkit-box-flex: 1;
+        -ms-flex-positive: 1;
+            flex-grow: 1;
+    font-size: 1.25rem;
+  }
+  .mainCountBtn {
+    --sizeIcon: 1rem;
+  }
+}

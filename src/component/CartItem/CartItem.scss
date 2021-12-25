@@ -1,0 +1,33 @@
+.cartItem {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+
+    &Img {
+        width: 3rem;
+        height: 3rem;
+        border-radius: 0.25rem;
+    }
+    &Detail {
+        flex-grow: 1;
+        display: flex;
+        flex-direction: column;
+        gap: 0.1rem;
+    }
+    &Total {
+        font-weight: bold;
+        color: var(--veryVarkBlue);
+    }
+    &Remove {
+        align-self: center;
+        flex: none;
+        background: none;
+        border: none;
+        outline: none;
+        transition: transform 0.2s ease;
+
+        &:active {
+            transform: scale(1.25);
+        }
+    }
+}

@@ -1,0 +1,31 @@
+.main .hold {
+  padding: var(--gap3) var(--gap1);
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  gap: var(--gap3);
+}
+
+@media (max-width: 950px) {
+  .main .hold {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+}
+
+@media (max-width: 450px) {
+  .main .hold {
+    padding: 0;
+    width: 100%;
+    margin: 0;
+  }
+}

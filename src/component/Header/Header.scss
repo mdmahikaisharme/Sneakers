@@ -1,0 +1,49 @@
+@import "../../asset/scss/mixin";
+
+.header {
+    position: sticky;
+    width: 100%;
+    top: 0;
+    left: 0;
+    background-color: var(--white);
+    border-bottom: 1px solid var(--gayishBlue);
+    z-index: var(--zIndexHeader);
+
+    .hold {
+        @include flex($ai: center, $jc: space-between);
+    }
+
+    &Left,
+    &Right {
+        @include flex($ai: center, $gap: var(--gap3));
+    }
+
+    &Logo {
+        height: var(--sizeIcon);
+        object-fit: contain;
+        z-index: calc(var(--zIndexNav) + 1);
+    }
+
+    &User {
+        width: var(--sizeIconBig);
+        height: var(--sizeIconBig);
+        border: 2px solid var(--orange);
+        border-radius: 50%;
+    }
+
+    @include medium() {
+        padding: var(--gap0-5) 0;
+
+        &Left,
+        &Right {
+            gap: var(--gap2);
+        }
+    }
+
+    @include mobile() {
+        &Left,
+        &Right {
+            gap: var(--gap1);
+        }
+    }
+}

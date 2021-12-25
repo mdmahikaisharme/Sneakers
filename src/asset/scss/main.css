@@ -1,0 +1,63 @@
+:root {
+  --orange: hsl(26, 100%, 55%);
+  --paleOrange: hsl(25, 100%, 94%);
+  --veryVarkBlue: hsl(220, 13%, 13%);
+  --darkGrayishBlue: hsl(219, 9%, 45%);
+  --gayishBlue: hsl(220, 14%, 75%);
+  --lightGrayishBlue: hsl(223, 64%, 98%);
+  --white: hsl(0, 0%, 100%);
+  --black: hsl(0, 0%, 0%);
+  --gap0-5: 0.5rem;
+  --gap1: 1rem;
+  --gap1-5: 1.5rem;
+  --gap2: 2rem;
+  --gap3: 3rem;
+  --gap4: 4rem;
+  --gap5: 5rem;
+  --sizeIcon: 1.25rem;
+  --sizeIconBig: 2.5rem;
+  --sizePreviewer: 500px;
+  --sizePreviewerPlaylist: 400px;
+  --zIndexHeader: 2;
+  --zIndexNav: 2;
+  --zIndexCart: 1;
+  --zIndexPreviewerModal: 3;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+button {
+  cursor: pointer;
+}
+
+.hold {
+  width: 80%;
+  margin: 0 auto;
+}
+
+@media (max-width: 950px) {
+  .hold {
+    width: calc(100% - var(--gap2) * 2);
+    margin: 0 var(--gap2);
+  }
+}
+
+@media (max-width: 450px) {
+  .hold {
+    width: calc(100% - var(--gap1-5) * 2);
+    margin: 0 var(--gap1-5);
+  }
+}

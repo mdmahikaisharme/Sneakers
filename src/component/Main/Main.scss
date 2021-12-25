@@ -1,0 +1,23 @@
+@import "../../asset/scss/mixin";
+
+.main {
+    .hold {
+        padding: var(--gap3) var(--gap1);
+        height: 100%;
+        @include flex($ai: center, $jc: center, $gap: var(--gap3));
+    }
+
+    @include medium() {
+        .hold {
+            flex-direction: column;
+        }
+    }
+
+    @include mobile() {
+        .hold {
+            padding: 0;
+            width: 100%;
+            margin: 0;
+        }
+    }
+}

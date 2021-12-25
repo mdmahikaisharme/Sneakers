@@ -1,0 +1,162 @@
+@import "../../asset/scss/mixin";
+
+.main {
+    &Right {
+        width: 50%;
+        @include flex($fd: column, $gap: 1rem);
+    }
+
+    &Title {
+        font-size: 2.6rem;
+        font-weight: 600;
+        line-height: 1em;
+        color: var(--veryVarkBlue);
+
+        &Sub {
+            font-size: 1rem;
+            letter-spacing: 0.1em;
+            color: var(--orange);
+        }
+    }
+
+    &Discribtion {
+        max-width: 64.5ch;
+        margin-top: 1rem;
+        line-height: 1.5em;
+        color: var(--darkGrayishBlue);
+    }
+
+    &Price {
+        @include flex($ai: center, $gap: 1rem);
+        color: var(--veryVarkBlue);
+
+        &Old {
+            margin-top: 0.25em;
+            font-weight: bold;
+            text-decoration: line-through;
+            color: var(--gayishBlue);
+        }
+    }
+    &Discount {
+        padding: 0.2rem 0.5rem;
+        font-size: 1rem;
+        background-color: var(--paleOrange);
+        color: var(--orange);
+        border-radius: 0.25rem;
+    }
+
+    &Opts {
+        max-width: 64.5ch;
+        margin-top: 1rem;
+        @include flex($gap: 1rem);
+    }
+
+    &Count {
+        padding: 0 1rem;
+        @include flex($ai: center, $gap: 1rem);
+        background-color: var(--lightGrayishBlue);
+        border-radius: 0.5rem;
+
+        &Input {
+            width: 4ch;
+            font-size: 1.5rem;
+            font-weight: bold;
+            background: none;
+            text-align: center;
+            border: none;
+            outline: none;
+            pointer-events: none;
+        }
+        &Btn {
+            background: none;
+            border: none;
+            outline: none;
+            transition: opacity 0.2s ease, transform 0.2s ease;
+
+            img {
+                width: var(--sizeIcon);
+                height: var(--sizeIcon);
+                object-fit: contain;
+            }
+
+            &:active {
+                opacity: 0.75;
+                transform: scale(1.25);
+            }
+        }
+    }
+
+    &AddToCart {
+        flex-grow: 1;
+        padding: 1rem;
+        font-size: 1rem;
+        font-weight: bold;
+        @include flex($ai: center, $jc: center, $gap: 1rem);
+        background-color: var(--orange);
+        color: var(--white);
+        border: none;
+        outline: none;
+        border-radius: 0.5rem;
+        transition: opacity 0.2s ease;
+
+        img {
+            width: var(--sizeIcon);
+            height: var(--sizeIcon);
+            filter: brightness(10);
+        }
+
+        &:active {
+            opacity: 0.75;
+        }
+    }
+
+    @include medium() {
+        &Right {
+            margin: 0 auto;
+            width: fit-content;
+        }
+    }
+
+    @include mobile() {
+        &Right {
+            padding: 0 var(--gap2);
+            padding-bottom: var(--gap4);
+        }
+
+        &Title {
+            font-size: 2rem;
+
+            &Sub {
+                font-size: 0.9rem;
+            }
+        }
+
+        &Discribtion {
+            margin-top: 0;
+        }
+
+        &Price {
+            &Hold {
+                @include flex($ai: center, $jc: space-between);
+            }
+            font-size: 1.5rem;
+        }
+
+        &Opts {
+            flex-direction: column;
+        }
+
+        &Count {
+            width: 100%;
+            padding: var(--gap1) var(--gap1);
+
+            &Input {
+                flex-grow: 1;
+                font-size: 1.25rem;
+            }
+            &Btn {
+                --sizeIcon: 1rem;
+            }
+        }
+    }
+}

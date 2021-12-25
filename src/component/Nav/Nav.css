@@ -1,0 +1,106 @@
+.nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 1.5rem;
+  z-index: var(--zIndexNav);
+}
+
+.navToggler {
+  display: none;
+}
+
+.navToggler + label {
+  width: var(--sizeIcon);
+  height: var(--sizeIcon);
+  display: none;
+  background-image: url("../../asset/img/icon-menu.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  -webkit-transition: background-image 0.2s ease;
+  transition: background-image 0.2s ease;
+  cursor: pointer;
+  -webkit-transition: -webkit-transform 0.2s ease;
+  transition: -webkit-transform 0.2s ease;
+  transition: transform 0.2s ease;
+  transition: transform 0.2s ease, -webkit-transform 0.2s ease;
+  z-index: calc(var(--zIndexNav) + 1);
+}
+
+.navToggler:checked + label {
+  background-image: url("../../asset/img/icon-close.svg");
+  -webkit-transform: rotate(90deg);
+          transform: rotate(90deg);
+}
+
+.navLink {
+  padding: 2rem 0;
+  font-size: 0.9rem;
+  text-decoration: none;
+  position: relative;
+  display: block;
+  color: var(--darkGrayishBlue);
+  -webkit-transition: color 0.2s ease;
+  transition: color 0.2s ease;
+}
+
+.navLink::after {
+  content: "";
+  width: 100%;
+  height: 0.2rem;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  -webkit-transition: background-color 0.2s ease;
+  transition: background-color 0.2s ease;
+}
+
+.navLink:hover {
+  color: var(--veryVarkBlue);
+}
+
+.navLink:hover::after {
+  background-color: var(--orange);
+}
+
+@media (max-width: 950px) {
+  .nav {
+    width: 90%;
+    height: 100vh;
+    max-width: 450px;
+    padding: 4rem 2rem 0;
+    position: fixed;
+    top: 0;
+    left: -100%;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+    gap: 0;
+    background-color: var(--white);
+    -webkit-transition: left 0.2s ease, -webkit-box-shadow 0.2s ease;
+    transition: left 0.2s ease, -webkit-box-shadow 0.2s ease;
+    transition: left 0.2s ease, box-shadow 0.2s ease;
+    transition: left 0.2s ease, box-shadow 0.2s ease, -webkit-box-shadow 0.2s ease;
+  }
+  .navToggler + label {
+    display: block;
+  }
+  .navToggler:checked ~ .nav {
+    left: 0;
+    -webkit-box-shadow: 100px 0 100px rgba(0, 0, 0, 0.5);
+            box-shadow: 100px 0 100px rgba(0, 0, 0, 0.5);
+  }
+  .navLink {
+    padding: 0.5rem 0;
+    font-size: 1rem;
+    font-weight: bold;
+  }
+}

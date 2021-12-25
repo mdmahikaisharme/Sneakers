@@ -1,0 +1,18 @@
+@import "./variable";
+@import "./reset";
+@import "./mixin";
+
+.hold {
+    width: 80%;
+    margin: 0 auto;
+
+    @include medium() {
+        width: calc(100% - var(--gap2) * 2);
+        margin: 0 var(--gap2);
+    }
+
+    @include mobile() {
+        width: calc(100% - var(--gap1-5) * 2);
+        margin: 0 var(--gap1-5);
+    }
+}

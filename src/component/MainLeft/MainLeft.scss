@@ -1,0 +1,10 @@
+@import "../../asset/scss/mixin";
+
+.mainLeft {
+    width: 50%;
+    @include flex($ai: center, $jc: center);
+
+    @include medium() {
+        width: 100%;
+    }
+}

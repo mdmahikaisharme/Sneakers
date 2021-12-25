@@ -1,0 +1,110 @@
+@import "../../asset/scss/mixin";
+
+.cart {
+    &Toggler {
+        display: none;
+
+        & + label {
+            width: var(--sizeIcon);
+            height: var(--sizeIcon);
+            position: relative;
+            display: block;
+            background-image: url("../../asset/img/icon-cart.svg");
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: contain;
+            transition: background-image 0.2s ease;
+            cursor: pointer;
+        }
+
+        &:checked + label + .cart {
+            display: grid;
+        }
+    }
+    &Notification {
+        padding: 0.15em 0.5em;
+        font-size: 0.6rem;
+        font-weight: bolder;
+        line-height: 1em;
+        position: absolute;
+        right: 0;
+        top: 0;
+        transform: translate(50%, -50%);
+        background-color: var(--orange);
+        color: var(--white);
+        border-radius: 0.5rem;
+        pointer-events: none;
+        user-select: none;
+    }
+
+    width: 350px;
+    min-height: 225px;
+    position: absolute;
+    top: 100%;
+    display: none;
+    background-color: var(--white);
+    grid-template: auto 1fr / 1fr;
+    transform: translate(-50%, 0);
+    z-index: var(--zIndexCart);
+    box-shadow: 5px 5px 30px rgba(0, 0, 0, 0.1), -5px 5px 30px rgba(0, 0, 0, 0.1);
+
+    &Title {
+        padding: 1rem 1.5rem;
+        color: var(--veryVarkBlue);
+    }
+
+    &Head {
+        border-bottom: 1px solid var(--gayishBlue);
+    }
+
+    &Main {
+        max-height: 300px;
+        padding: 0 1.5rem;
+        padding-top: 1.5rem;
+        position: relative;
+        @include flex($fd: column, $gap: 1rem);
+        color: var(--darkGrayishBlue);
+        overflow-y: scroll;
+    }
+
+    &EmptyTxt {
+        font-weight: 700;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    &Checkout {
+        margin: 1.5rem;
+        padding: 1rem;
+        font-size: 1rem;
+        font-weight: bold;
+        background-color: var(--orange);
+        color: var(--white);
+        border: none;
+        outline: none;
+        border-radius: 0.5rem;
+        transition: opacity 0.2s ease;
+
+        &:active {
+            opacity: 0.75;
+        }
+    }
+
+    @include medium() {
+        transform: translate(-75%, 0);
+    }
+
+    @include mobile() {
+        width: calc(100% - var(--gap0-5) * 2);
+        left: 50%;
+        top: calc(100% + var(--gap0-5));
+        transform: translate(-50%, 0);
+        border-radius: var(--gap0-5);
+
+        &Main {
+            height: 200px;
+        }
+    }
+}

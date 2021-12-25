@@ -1,0 +1,89 @@
+@import "../../asset/scss/mixin";
+
+.nav {
+    &Toggler {
+        display: none;
+
+        & + label {
+            width: var(--sizeIcon);
+            height: var(--sizeIcon);
+            display: none;
+            background-image: url("../../asset/img/icon-menu.svg");
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: contain;
+            transition: background-image 0.2s ease;
+            cursor: pointer;
+            transition: transform 0.2s ease;
+            z-index: calc(var(--zIndexNav) + 1);
+        }
+
+        &:checked + label {
+            background-image: url("../../asset/img/icon-close.svg");
+            transform: rotate(90deg);
+        }
+    }
+
+    @include flex($ai: center, $gap: 1.5rem);
+    z-index: var(--zIndexNav);
+
+    &Link {
+        padding: 2rem 0;
+        font-size: 0.9rem;
+        text-decoration: none;
+        position: relative;
+        display: block;
+        color: var(--darkGrayishBlue);
+        transition: color 0.2s ease;
+
+        &::after {
+            content: "";
+            width: 100%;
+            height: 0.2rem;
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            transition: background-color 0.2s ease;
+        }
+
+        &:hover {
+            color: var(--veryVarkBlue);
+
+            &::after {
+                background-color: var(--orange);
+            }
+        }
+    }
+
+    @include medium() {
+        &Toggler {
+            & + label {
+                display: block;
+            }
+
+            &:checked ~ .nav {
+                left: 0;
+                box-shadow: 100px 0 100px rgba(0, 0, 0, 0.5);
+            }
+        }
+
+        width: 90%;
+        height: 100vh;
+        max-width: 450px;
+        padding: 4rem 2rem 0;
+        position: fixed;
+        top: 0;
+        left: -100%;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0;
+        background-color: var(--white);
+        transition: left 0.2s ease, box-shadow 0.2s ease;
+
+        &Link {
+            padding: 0.5rem 0;
+            font-size: 1rem;
+            font-weight: bold;
+        }
+    }
+}
